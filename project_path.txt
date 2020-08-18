@@ -1,12 +1,15 @@
 .
 ├── book_manage
 │   ├── book_manage
-│   │   ├── __init__.py
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   └── wsgi.py
+│   │   ├── demo
+│   │   │   ├── __init__.py
+│   │   │   ├── settings.py
+│   │   │   ├── urls.py
+│   │   │   └── wsgi.py
+│   │   └── __init__.py
+│   ├── __init__.py
 │   └── manage.py
 ├── project_path.txt
 └── README.md
 
-2 directories, 7 files
+3 directories, 9 files
