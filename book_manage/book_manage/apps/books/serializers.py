@@ -1,4 +1,8 @@
 from rest_framework import serializers
+
+from books.models import BookInfo
+
+
 class PeopleInfoSerializer(serializers.Serializer):
     name = serializers.CharField()
     description = serializers.CharField()
@@ -15,7 +19,7 @@ class Bookserializer(serializers.Serializer):
 
 class BookValserializer(serializers.Serializer):
     name = serializers.CharField(max_length=20,min_length=5)
-    pub_date = serializers.DateField(required=False)
+    pub_date = serializers.DateField()
     readcount = serializers.IntegerField(max_value=100,min_value=5)
     commentcount = serializers.IntegerField(default=10)
     def validate_name(self,book_name):
@@ -27,5 +31,8 @@ class BookValserializer(serializers.Serializer):
             raise serializers.ValidationError('not readcount > commentcount')
         return value
 
+    def create(self, validated_data):
+        books = BookInfo.objects.create(**validated_data)
+        return books
 
 

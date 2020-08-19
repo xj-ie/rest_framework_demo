@@ -24,4 +24,5 @@ class Books(View):
         dict_str = json.loads(body)
         res = BookValserializer(data=dict_str)
         res.is_valid()
-        return http.JsonResponse(res.errors)
+        res.save()
+        return http.JsonResponse(res.data)
