@@ -37,8 +37,23 @@ class BookValserializer(serializers.Serializer):
 
 
 class BookModelSerializer(serializers.ModelSerializer):
+    name = serializers.CharField(max_length=10) # 修改名称的最长度
+    sms_vlid = serializers.CharField(min_length=5, max_length=5)
+
+    # 添加未有的字段，但是必需在下面的字段中写入
+
+
     class Meta:
         model = BookInfo    # 指定根据db demo charset
         # fields = ('name', 'readcount')  #  rundatabase_class charset
         # fields = '__all__'  #create all database_class charset
-        exclude = ('pub_date', ) # 排斥这个字符，其他的都写入
+        exclude = ('pub_date', ) # 排斥这个字符，其他的都写入   
+
+        read_only_fields = ("commentcount", )# 添加一个read_only 属性
+        extra_kwargs = {
+            'readcount':{
+                'default':10
+            }
+        }
+        #oange gander char default count
+        
