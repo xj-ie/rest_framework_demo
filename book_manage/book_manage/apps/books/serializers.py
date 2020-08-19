@@ -36,3 +36,9 @@ class BookValserializer(serializers.Serializer):
         return books
 
 
+class BookModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BookInfo    # 指定根据db demo charset
+        # fields = ('name', 'readcount')  #  rundatabase_class charset
+        # fields = '__all__'  #create all database_class charset
+        exclude = ('pub_date', ) # 排斥这个字符，其他的都写入
