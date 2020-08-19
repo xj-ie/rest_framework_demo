@@ -94,7 +94,7 @@ DATABASES = {
         'PORT': 3306,
         "USER": "root",
         "PASSWORD": "123123",
-        'NAME': "book_magage",
+        'NAME': "bookss",
     }
 }
 
