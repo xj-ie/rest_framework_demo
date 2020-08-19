@@ -13,3 +13,9 @@ class Bookserializer(serializers.Serializer):
     # peopleinfo_set = serializers.StringRelatedField(read_only=True, many=True)
     peopleinfo_set = PeopleInfoSerializer(many=True)
 
+class BookValserializer(serializers.Serializer):
+    name = serializers.CharField(max_length=20,min_length=5)
+    pub_date = serializers.DateField(required=False)
+    readcount = serializers.IntegerField(max_value=100,min_value=5)
+
+
