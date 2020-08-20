@@ -35,6 +35,11 @@ class BookValserializer(serializers.Serializer):
         books = BookInfo.objects.create(**validated_data)
         return books
 
+    def update(self, instance, validated_data):
+        instance.name = validated_data['name']
+        instance.save()
+        return instance
+
 
 class BookModelSerializer(serializers.ModelSerializer):
     name = serializers.CharField(max_length=10) # 修改名称的最长度

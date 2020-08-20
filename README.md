@@ -22,3 +22,17 @@ django-演示教学
 ##### 可以指定序列化器到属性中去。
 
 ​	　serialzier_class＝序列化器
+
+## ３、拓展类　
+
+##### 　一共有五个拓展类，需要配合ＧenericＡＰＩＶiew使用
+
+​	ListModelMixin	获取多少个数据对象　　
+
+​	CreateModelMixin	保存数据　
+
+​	RetrieveModelMxin	获取单一数据对象　	　　　　
+
+​	UpdateModelMixin	更新数据　
+
+​	DestroyModelMixin 	删除数据　
