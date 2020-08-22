@@ -135,3 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+Serializerchange_url = {'put': 'update', 'get': 'lastdata', 'delete': 'deltet'}
+Serializer_url = {'put': 'create', 'get': 'list'}
