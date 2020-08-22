@@ -55,5 +55,12 @@ class Books_update(ViewSet):
         res.save()
         return Response(res.data)
         # return self.update(request, pk)
-    # def delete(self, request, pk):
+    def delete(self, request, pk):
     #     book = BookInfo.objects
+        try:
+            book = BookInfo.objects.get(id=pk)
+            book.is_delete=True
+            book.save()
+        except Exception:
+            return Response('False')
+        return Response('True')
