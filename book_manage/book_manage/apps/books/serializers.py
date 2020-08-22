@@ -32,6 +32,7 @@ class BookValserializer(serializers.Serializer):
         return value
 
     def create(self, validated_data):
+        print(validated_data)
         books = BookInfo.objects.create(**validated_data)
         return books
 
