@@ -36,3 +36,32 @@ django-演示教学
 ​	UpdateModelMixin	更新数据　
 
 ​	DestroyModelMixin 	删除数据　
+
+## 4、视图集（可以自定义视图路由）
+
+##### 有两个基本视图集
+
+###### 	ViewSet
+
+​		继承自APIView
+
+###### 	GenericViewSet
+
+​		继承自GenericView
+
+##### 有两个拓展视图集
+
+###### 	ModelViewSet 
+
+​		继承GenericApiView
+
+​		继承了五个拓展类
+
+###### 	ReadOnlyModeViewSet
+
+​		继承GeneriApiView
+
+​		继承LIstmodelMixin
+
+​		继承RetrieveModelMxin	
+
