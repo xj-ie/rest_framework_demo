@@ -37,6 +37,7 @@ class Books(ViewSet):
         data = request.data  # 相等于上面两行
         res = BookValserializer(data=data)
         res.is_valid()
+        print(res.errors)
         res.save()
         return Response(res.data)
 class Books_update(ViewSet):
@@ -55,4 +56,4 @@ class Books_update(ViewSet):
         return Response(res.data)
         # return self.update(request, pk)
     # def delete(self, request, pk):
-        # return self.delete(request, pk)
+    #     book = BookInfo.objects
