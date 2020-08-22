@@ -73,4 +73,11 @@ django-演示教学
 
 ##### 	action装饰器（自定义的函数的路由的自动生成）
 
+
+
+```python
+	SimpleRouter
+	DefaultRouter
+```
+
 ​		![](image\ModelViewSet_自动生成路由之action的使用.png)
