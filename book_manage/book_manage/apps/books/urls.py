@@ -5,6 +5,6 @@ from . import views
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     # url(r'^', inclu('books.urls'))
-    url(r'^book_drf$', views.Books.as_view({'get': 'list', 'post': 'create'})),
-    url(r'^book_drf/(?P<pk>\d+)$', views.Books_update.as_view({'put': 'update'}))
+    url(r'^book_drf$', views.BooksDRF.as_view({'get': 'list', 'post': 'create'})),
+    url(r'^book_drf/(?P<pk>\d+)$', views.BooksDRF.as_view({'put': 'update'}))
 ]

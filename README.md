@@ -45,6 +45,8 @@ django-演示教学
 
 ​		继承自APIView
 
+​			![](image\ViewSet.png)
+
 ###### 	GenericViewSet
 
 ​		继承自GenericView
@@ -54,6 +56,8 @@ django-演示教学
 ###### 	ModelViewSet 
 
 ​		继承GenericApiView
+
+​			![](image\ModelViewSet.png)
 
 ​		继承了五个拓展类
 
