@@ -27,7 +27,7 @@ class Books(ViewSet):
     # # salizer_class = Bookserializer
     # serializer_class = Bookserializer
     throttle_scope = "Books"
-    filter_fields = ('btitle', 'bread')
+    filter_fields = ('name', )
     def list(self,request):
         # return self.list(request)
         data = BookInfo.objects.all()

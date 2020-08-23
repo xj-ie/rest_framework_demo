@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from books.models import BookInfo
 from books.serializers import BookValserializer
 from books.serializers import Bookserializer
+from rest_framework.filters import OrderingFilter
 
 
 class BooksDRF(ModelViewSet):
@@ -15,7 +16,9 @@ class BooksDRF(ModelViewSet):
     authentication_classes = (BasicAuthentication, SessionAuthentication)
     permission_classes = (IsAuthenticated, )
     throttle_scope = 'BooksDRF'
-    filter_fields = ('btitle', 'bread')
+    # filter_fields = ('name', )#指定过滤所传参数
+    filter_backends = [OrderingFilter] #指定排序器
+    ordering_fields = ('id', 'bpub_date') #是指定排序规则
 
     def get_serializer_class(self):  #可以通过 这个来指定多个序列 化器
         if self.action in settings.SERIALIZERCHANGE_URL.values(): #通过这个来区别 类型来指定序列化器
