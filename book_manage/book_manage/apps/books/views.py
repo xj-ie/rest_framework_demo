@@ -14,6 +14,7 @@ class BooksDRF(ModelViewSet):
     queryset = BookInfo.objects.all()
     authentication_classes = (BasicAuthentication, SessionAuthentication)
     permission_classes = (IsAuthenticated, )
+    throttle_scope = 'BooksDRF'
 
     def get_serializer_class(self):  #可以通过 这个来指定多个序列 化器
         if self.action in settings.SERIALIZERCHANGE_URL.values(): #通过这个来区别 类型来指定序列化器

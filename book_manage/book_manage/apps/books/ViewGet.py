@@ -26,6 +26,7 @@ class Books(ViewSet):
     # # ＃指定查询类视图数据
     # # salizer_class = Bookserializer
     # serializer_class = Bookserializer
+    throttle_scope = "Books"
 
     def list(self,request):
         # return self.list(request)
