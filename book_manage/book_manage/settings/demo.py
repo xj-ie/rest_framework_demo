@@ -137,5 +137,16 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-Serializerchange_url = {'put': 'update', 'get': 'lastdata', 'delete': 'deltet'}
-Serializer_url = {'put': 'create', 'get': 'list'}
+SERIALIZERCHANGE_URL = {'put': 'update', 'get': 'lastdata', 'delete': 'deltet'}
+SERIALIZER_URL = {'put': 'create', 'get': 'list'}
+
+# 全部配置认证权限
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',   # 基本认证
+        'rest_framework.authentication.SessionAuthentication',  # session认证
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
