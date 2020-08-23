@@ -159,11 +159,11 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_THROTTLE_RATES': {
         'BooksDRF': '2/day',
-        'Books': '4/day'
-    }
-}
+        'Books': '4/day',
 
-REST_FRAMEWORK = {
+    },
     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
 }
+
+
 
