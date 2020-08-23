@@ -1,5 +1,7 @@
 
 
+
+
 # rest_framework_demo
 
 django-演示教学
@@ -115,3 +117,27 @@ from rest_framework.permissions import IsAuthenticated
     authentication_classes = (BasicAuthentication, SessionAuthentication)
     permission_classes = (IsAuthenticated, )
 ```
+
+## 7、 rest的限流
+
+​	全局配置
+
+​		setting中
+
+```python
+REST_FRAMEWORK = {
+    'DEFAULT_THROTTLE_CLASSES': (
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ),
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '100/day',
+        'user': '1000/day'
+    }
+}
+```
+
+局部配置
+
+​		视图中
+
