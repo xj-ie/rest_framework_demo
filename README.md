@@ -1,4 +1,7 @@
+
+
 # rest_framework_demo
+
 django-演示教学
 
 ## １、序列化与反序列化
@@ -81,3 +84,34 @@ django-演示教学
 ```
 
 ​		![](image\ModelViewSet_自动生成路由之action的使用.png)
+
+## 6、rest_认证和权限分配。
+
+​	全局配置
+
+​		setting中
+
+​			
+
+```python
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',   # 基本认证
+        'rest_framework.authentication.SessionAuthentication',  # session认证
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
+```
+
+​	局部配置
+
+​		视图中
+
+```python
+from rest_framework.authentication import BasicAuthentication, SessionAuthentication
+from rest_framework.permissions import IsAuthenticated
+    authentication_classes = (BasicAuthentication, SessionAuthentication)
+    permission_classes = (IsAuthenticated, )
+```

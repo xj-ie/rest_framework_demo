@@ -142,11 +142,11 @@ SERIALIZER_URL = {'put': 'create', 'get': 'list'}
 
 # 全部配置认证权限
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.BasicAuthentication',   # 基本认证
-        'rest_framework.authentication.SessionAuthentication',  # session认证
-    ),
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    )
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #     'rest_framework.authentication.BasicAuthentication',   # 基本认证
+    #     'rest_framework.authentication.SessionAuthentication',  # session认证
+    # ),
+    # 'DEFAULT_PERMISSION_CLASSES': (
+    #     'rest_framework.permissions.IsAuthenticated',
+    # )
 }
