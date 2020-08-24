@@ -14,9 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-from django.contrib import admin
+# from django.contrib import admin
+# from rest_framework.decorators import
+from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
-    url(r'^', include('books.urls'))
+    url(r'^', include('books.urls')),
+    #自动生成接口文档
+    url(r'^docs/', include_docs_urls(title='My API title'))
+
 ]

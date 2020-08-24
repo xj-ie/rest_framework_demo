@@ -162,7 +162,10 @@ REST_FRAMEWORK = {
         'Books': '4/day',
 
     },
-    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+
+    # 生成异常处理的全局方法
+    'EXCEPTION_HANDLER': 'my_project.my_app.utils.custom_exception_handler'
 }
 
 

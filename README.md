@@ -142,3 +142,50 @@ REST_FRAMEWORK = {
 ​		视图中
 
 ​	详细看代码 。。。
+
+
+
+## 8、rest异常处理
+
+### REST framework定义的异常
+
+- APIException 所有异常的父类
+
+- ParseError 解析错误
+
+- AuthenticationFailed 认证失败
+
+- NotAuthenticated 尚未认证
+
+- PermissionDenied 权限决绝
+
+- NotFound 未找到
+
+- MethodNotAllowed 请求方式不支持
+
+- NotAcceptable 要获取的数据格式不支持
+
+- Throttled 超过限流次数
+
+- ValidationError 校验失败
+
+  
+
+  #### 统一的数据库异常处理封装
+
+  ```python
+  from rest_framework.views import exception_handler as drf_exception_handler
+  from rest_framework import status
+  from django.db import DatabaseError
+  
+  def exception_handler(exc, context):
+      response = drf_exception_handler(exc, context)
+  
+      if response is None:
+          view = context['view']
+          if isinstance(exc, DatabaseError):
+              print('[%s]: %s' % (view, exc))
+              response = Response({'detail': '服务器内部错误'}, status=status.HTTP_507_INSUFFICIENT_STORAGE)
+  
+      return response
+  ```
